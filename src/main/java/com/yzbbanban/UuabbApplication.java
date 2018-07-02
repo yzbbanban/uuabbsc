@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class UuabbApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(UuabbApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(UuabbApplication.class, args);
+    }
 }
