@@ -35,7 +35,7 @@ public class ObjectFactory<T> extends BasePooledObjectFactory<T> implements Pool
     }
 
     /**
-     * 反初始化每次回收的时候都会执行这个方法
+     * 初始化每次回收的时候都会执行这个方法
      *
      * @param pooledObject 对象实例
      */
