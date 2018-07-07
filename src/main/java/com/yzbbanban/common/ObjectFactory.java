@@ -41,6 +41,6 @@ public class ObjectFactory<T> extends BasePooledObjectFactory<T> implements Pool
      */
     @Override
     public void passivateObject(PooledObject<T> pooledObject) {
-        System.out.println(pooledObject);
+//        System.out.println(pooledObject);
     }
 }
