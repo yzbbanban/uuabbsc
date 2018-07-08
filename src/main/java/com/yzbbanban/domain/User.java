@@ -8,6 +8,14 @@ public class User {
     private String name;
     private Integer age;
 
+    public User() {
+    }
+
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -32,4 +40,11 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

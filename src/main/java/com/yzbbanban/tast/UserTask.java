@@ -31,7 +31,7 @@ public class UserTask implements CallBack<String, Integer> {
 
     private GenericObjectPoolFactory<User> genericObjectPoolFactory = new GenericObjectPoolFactory<>();
 
-    @Scheduled(cron = "0/10 * * * * ?")
+//    @Scheduled(cron = "0/10 * * * * ?")
     public void test() {
         pool = genericObjectPoolFactory.createObjectPool(User.class);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS");

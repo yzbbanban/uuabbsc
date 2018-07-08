@@ -31,7 +31,7 @@ public class AddressTask implements CallBack<String, Integer> {
 
     private GenericObjectPool<Address> pool;
 
-    @Scheduled(cron = "0/10 * * * * ?")
+//    @Scheduled(cron = "0/10 * * * * ?")
     public void test() {
         pool = genericObjectPoolFactory.createObjectPool(Address.class);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS");
