@@ -27,13 +27,13 @@ public class UserTask implements CallBack<String, Integer> {
     @Autowired
     private QueueThreadUtils queueThreadUtils;
 
-    private GenericObjectPool<User> pool;
+//    private GenericObjectPool<User> pool;
 
-    private GenericObjectPoolFactory<User> genericObjectPoolFactory = new GenericObjectPoolFactory<>();
+//    private GenericObjectPoolFactory<User> genericObjectPoolFactory = new GenericObjectPoolFactory<>();
 
 //    @Scheduled(cron = "0/10 * * * * ?")
     public void test() {
-        pool = genericObjectPoolFactory.createObjectPool(User.class);
+//        pool = genericObjectPoolFactory.createObjectPool(User.class);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS");
         String time = format.format(Calendar.getInstance().getTime());
         System.out.println("-------UserTask------>" + time);
@@ -55,14 +55,14 @@ public class UserTask implements CallBack<String, Integer> {
         List<User> userList = Lists.newArrayList();
         for (int i = 0; i < 100000; i++) {
             try {
-                User u = pool.borrowObject();
-//                User u = new User();
+//                User u = pool.borrowObject();
+                User u = new User();
                 u.setId(i);
                 u.setName("banpppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp" + i);
                 u.setAge(i + 1);
                 userList.add(u);
                 //一定要回池
-                pool.returnObject(u);
+//                pool.returnObject(u);
 //                returnObject(pool, u);
             } catch (Exception e) {
                 e.printStackTrace();

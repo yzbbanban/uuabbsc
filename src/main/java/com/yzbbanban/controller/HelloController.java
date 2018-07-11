@@ -5,7 +5,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Random;
 
@@ -21,36 +23,16 @@ public class HelloController {
     private DiscoveryClient client;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String hello() throws Exception {
+    public String hello() {
         ServiceInstance instance = client.getLocalServiceInstance();
-        int sleepTime = new Random().nextInt(3000);
-        logger.info("sleepTime: " + sleepTime);
-        Thread.sleep(sleepTime);
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         logger.info("/hello,host: " + instance.getHost() + ",service_id: " + instance.getServiceId());
         return "hello world";
-    }
 
-    @RequestMapping(value = "/hello1", method = RequestMethod.GET)
-    public String hello1(@RequestParam String name) {
-        ServiceInstance instance = client.getLocalServiceInstance();
-
-        logger.info("/hello,host: " + instance.getHost() + ",service_id: " + instance.getServiceId());
-
-        return "hello world: " + name;
-    }
-
-    @RequestMapping(value = "/hello2", method = RequestMethod.GET)
-    public User hello2(@RequestHeader String name, @RequestHeader Integer age) {
-        ServiceInstance instance = client.getLocalServiceInstance();
-        logger.info("/hello,host: " + instance.getHost() + ",service_id: " + instance.getServiceId());
-        return new User(name, age);
-    }
-
-    @RequestMapping(value = "/hello3", method = RequestMethod.POST)
-    public String hello3(@RequestBody User user) {
-        ServiceInstance instance = client.getLocalServiceInstance();
-        logger.info("/hello,host: " + instance.getHost() + ",service_id: " + instance.getServiceId());
-        return "hello world: " + user.getName() + "," + user.getAge();
     }
 
     @RequestMapping(value = "/testPool", method = RequestMethod.GET)

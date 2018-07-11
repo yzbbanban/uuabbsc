@@ -38,9 +38,9 @@ public class AddressTask implements CallBack<String, Integer> {
         String time = format.format(Calendar.getInstance().getTime());
         System.out.println("-------AddressTask------>" + time);
 
-        List<Integer> integerList = Lists.newArrayList(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100);
+        List<Integer> integerList = Lists.newArrayList(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,100, 100, 100, 100, 100, 100, 100, 100, 100);
         try {
-            queueThreadUtils.executeDataIn(11, integerList, this);
+            queueThreadUtils.executeDataIn(20, integerList, this);
         } catch (Exception e) {
             e.printStackTrace();
         }

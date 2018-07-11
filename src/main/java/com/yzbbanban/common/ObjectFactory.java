@@ -6,16 +6,22 @@ import org.apache.commons.pool2.PooledObjectFactory;
 import org.apache.commons.pool2.impl.DefaultPooledObject;
 
 /**
- * Created by ban on 2018/7/5.
  * 针对池对象的生命周期管理
  *
  * @author ban
  */
 public class ObjectFactory<T> extends BasePooledObjectFactory<T> implements PooledObjectFactory<T> {
 
-
+    /**
+     * 对象池类型
+     */
     private Class clz;
 
+    /**
+     * 对象池工厂
+     *
+     * @param clz 对象类型
+     */
     public ObjectFactory(Class clz) {
         this.clz = clz;
     }
