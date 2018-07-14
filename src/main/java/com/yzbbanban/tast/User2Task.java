@@ -1,14 +1,13 @@
 package com.yzbbanban.tast;
 
 import com.google.common.collect.Lists;
-import com.yzbbanban.common.GenericObjectPoolFactory;
+import com.yzbbanban.common.objectPool.GenericObjectPoolFactory;
 import com.yzbbanban.common.component.CallBack;
 import com.yzbbanban.common.component.QueueThreadUtils;
 import com.yzbbanban.domain.User;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package com.yzbbanban.common;
+package com.yzbbanban.common.objectPool;
 
 import org.apache.commons.pool2.impl.GenericObjectPool;
 
