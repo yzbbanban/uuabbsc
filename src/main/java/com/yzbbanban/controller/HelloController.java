@@ -3,8 +3,8 @@ package com.yzbbanban.controller;
 import com.yzbbanban.domain.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,21 +16,22 @@ import java.util.Random;
  * Created by ban on 2018/7/2.
  */
 @RestController
+@RequestMapping("/test")
 public class HelloController {
     private final Logger logger = Logger.getLogger(getClass());
 
     @Autowired
     private DiscoveryClient client;
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @GetMapping(value = "/hello")
     public String hello() {
-        ServiceInstance instance = client.getLocalServiceInstance();
+//        ServiceInstance instance = client.getLocalServiceInstance();
 //        try {
 //            Thread.sleep(5000);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-        logger.info("/hello,host: " + instance.getHost() + ",service_id: " + instance.getServiceId());
+//        logger.info("/hello,host: " + instance.getHost() + ",service_id: " + instance.getServiceId());
         return "hello world";
 
     }
