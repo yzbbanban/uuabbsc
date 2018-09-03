@@ -5,6 +5,7 @@ import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.sleuth.zipkin.stream.EnableZipkinStreamServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -12,6 +13,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 @EnableDiscoveryClient
 @SpringBootApplication
+@EnableZipkinStreamServer
 @EnableScheduling
 public class UuabbApplication {
 
